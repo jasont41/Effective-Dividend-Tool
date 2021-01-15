@@ -15,7 +15,7 @@ float calculateEffective(float annualDividend,float currentShares,int purchaseSh
 int main(int argc, const char * argv[]) {
     float annualDividend, currentShares, effectiveDividend, price;
     int years = 40,purchasedShares;
-    purchasedShares = currentShares = 200;
+    purchasedShares = currentShares = 500;
     annualDividend = 2.08;
     price = 28.75;
     effectiveDividend = annualDividend/price;
@@ -24,7 +24,7 @@ int main(int argc, const char * argv[]) {
         annualDividend += annualDividend * 0.002;
         float tempDiv  = annualDividend * currentShares;
         currentShares = currentShares + (tempDiv/price);
-        cout <<setprecision(4) <<  i+1 << "\t     " << calculateEffective(annualDividend, currentShares, purchasedShares, price) <<  "%\t\t\t\t $" << tempDiv << "\t\t\t\t" << currentShares << endl;
+        cout <<setprecision(4) <<  i+1 << "\t     " << calculateEffective(annualDividend, currentShares, purchasedShares, price) <<  "%\t\t\t\t $" << setprecision(7)<< tempDiv << "\t\t\t\t" << currentShares << endl;
     }
     cout << setprecision(6) << "Purchase Price: " << purchasedShares * price << "\t\t\t\ Current Price: " << currentShares * price << endl;
     return 0;
