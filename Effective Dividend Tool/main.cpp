@@ -15,13 +15,13 @@ float calculateEffective(float annualDividend,float currentShares,int purchaseSh
 int main(int argc, const char * argv[]) {
     float annualDividend, currentShares, effectiveDividend, price;
     int years = 40,purchasedShares;
-    purchasedShares = currentShares = 500;
-    annualDividend = 2.08;
-    price = 28.75;
+    purchasedShares = currentShares = 250;
+    annualDividend = 0.235*12;
+    price = 60.50;
     effectiveDividend = annualDividend/price;
     cout << "Year\t Effective Yield\t Annual Dividend\tCurrent Shares" << endl;
     for(int i = 0; i < years; i++){
-        annualDividend += annualDividend * 0.002;
+        annualDividend += annualDividend * 0.0045;
         float tempDiv  = annualDividend * currentShares;
         currentShares = currentShares + (tempDiv/price);
         cout <<setprecision(4) <<  i+1 << "\t     " << calculateEffective(annualDividend, currentShares, purchasedShares, price) <<  "%\t\t\t\t $" << setprecision(7)<< tempDiv << "\t\t\t\t" << currentShares << endl;
