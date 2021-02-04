@@ -15,7 +15,7 @@ float calculateEffective(float annualDividend,float currentShares,int purchaseSh
 int main(int argc, const char * argv[]) {
     float annualDividend, currentShares, effectiveDividend, price;
     int years = 40,purchasedShares;
-    purchasedShares = currentShares = 250;
+    purchasedShares = currentShares = 150;
     annualDividend = 0.235*12;
     price = 60.50;
     effectiveDividend = annualDividend/price;
